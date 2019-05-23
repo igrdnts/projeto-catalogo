@@ -1,0 +1,25 @@
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 align-center">
+        <h2><a href="{{url_for('show_all')}}">Catalog App</a></h2>
+    </div>
+    <div class="col-md-6 align-center" align="right">
+        {%if 'username' not in session %}
+        <a class="btn btn-outline-primary" href="{{url_for('showLogin')}}" role="button">
+                Login
+        </a>
+        {% else %}
+        <a class="btn btn-outline-primary" href="{{url_for('disconnect')}}" role="button">
+                Logout
+        </a>
+        {% endif %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+
+{% endblock %}
